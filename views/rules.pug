@@ -1,0 +1,94 @@
+extends layouts/main-layout.pug 
+block content
+    main
+        #modelNewRule.modal.fade(data-bs-backdrop="static" data-bs-keyboard="false" tabindex='-1' aria-labelledby='modelNewRule' aria-hidden='true')
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-header
+                        h5#modelNewRuleLabel.modal-title Add new Rule
+                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')#topCloseBut
+                    .modal-body
+                        form
+                            #formHelp.form-text.text-muted Error
+                            .mb-3
+                                label.col-form-label(for='rule-name') Rule Name:
+                                input#rule-name.form-control(type='text')
+                            .mb-3
+                                label.col-form-label(for='rule-proof') Rule Proof Info:
+                                input#rule-proof.form-control(type='text')
+                    .modal-footer
+                        button.btn.btn-secondary(type='button' data-bs-dismiss='modal')#closeBut Close
+                        button.btn.btn-primary(type='button')#saveNewRule Add
+        
+        #modelEditRule.modal.fade(data-bs-backdrop="static" data-bs-keyboard="false" tabindex='-1' aria-labelledby='modelEditRule' aria-hidden='true')
+            .modal-dialog.modal-dialog-centered
+                .modal-content
+                    .modal-header
+                        h5#modelEditRuleLabel.modal-title Edit Rule
+                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')#topCloseButEdit
+                    .modal-body
+                        form
+                            #formHelpEdit.form-text.text-muted Error
+                            .mb-3
+                                label.col-form-label(for='rule-name') Rule Name:
+                                input#rule-name-edit.form-control(type='text')
+                            .mb-3
+                                label.col-form-label(for='rule-proof') Rule Proof Info:
+                                input#rule-proof-edit.form-control(type='text')
+                    .modal-footer
+                        button.btn.btn-secondary(type='button' data-bs-dismiss='modal')#closeButEdit Close
+                        button.btn.btn-primary(type='button')#saveEditRule Save
+
+        section(style='background-color: #eee;')
+            .container.py-5
+                .row
+                    .col
+                        nav.bg-body-tertiary.rounded-3.p-3.mb-4(aria-label='breadcrumb')
+                            ol.breadcrumb.mb-0
+                                li.breadcrumb-item
+                                    a(href='/dashboard') Dashboard
+                                li.breadcrumb-item
+                                    a(href='/profile') Profile
+                                li.breadcrumb-item.active(aria-current='page') Issue Rules
+                .row.placeholder-glow#profileEvents
+                    .col-lg-12
+                        .row
+                            .col-md-8
+                                .card.mb-4.mb-md-0
+                                    .card-body#rulesListBody
+                                        p.mb-4
+                                            span.text-primary.font-italic.me-1 Rules
+                                        p.mb-1(style='font-size: .77rem;') Total Rules
+                                        .mb-4#supplierOrdersCount
+                                            span.placeholder.col-2
+                                        .mb-4.d-flex.justify-content-between
+                                            div
+                                                span.text-dark.font-italic.me-1 Rule List
+                                            #ruleButtons
+                                                button.btn.btn-primary.font-italic.me-1(role="button" type='button' data-mdb-button-init='' data-mdb-ripple-init=''  data-bs-toggle='modal' data-bs-target='#modelEditRule')#editRule Edit Rule
+                                                button.btn.btn-primary.font-italic.me-1(role="button")#deleteRule Delete Rule
+                                        .row.border.border-primary.border-2.rounded.p-2.mt-0.mx-2#rulesDisplay
+                                            .col-4
+                                                #list-tab.list-group(role='tablist').rulesList
+                                                    //- a#list-home-list.list-group-item.list-group-item-action.active(data-bs-toggle='list' href='#list-home' role='tab' aria-controls='list-home')
+                                                    //-     span.placeholder.col-12
+                                                    //- a#list-profile-list.list-group-item.list-group-item-action(data-bs-toggle='list' href='#list-profile' role='tab' aria-controls='list-profile')
+                                                    //-     span.placeholder.col-12
+                                                    //- a#list-messages-list.list-group-item.list-group-item-action(data-bs-toggle='list' href='#list-messages' role='tab' aria-controls='list-messages')
+                                                    //-     span.placeholder.col-12
+                                                    //- a#list-settings-list.list-group-item.list-group-item-action(data-bs-toggle='list' href='#list-settings' role='tab' aria-controls='list-settings')
+                                                    //-     span.placeholder.col-12
+                                            .col-8
+                                                #nav-tabContent.tab-content.rulesInfoList
+                                                    //- #list-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='list-home-list') cache-status: node5.env2.dc1.uk.techloq.com;detail=no-cache onnection: keep-alive content-encoding: gzip content-type: application/json; charset=utf-8 date: Thu,06 Jun 2024 13:34:01 GMT referrer-policy: no-referrer-when-downgrade  transfer-encoding: chunked  vary: Accept-Encoding x-powered-by: ASP.NET
+                                                    //- #list-profile.tab-pane.fade(role='tabpanel' aria-labelledby='list-profile-list') ...
+                                                    //- #list-messages.tab-pane.fade(role='tabpanel' aria-labelledby='list-messages-list') ...
+                                                    //- #list-settings.tab-pane.fade(role='tabpanel' aria-labelledby='list-settings-list') ...
+                            .col-md-4
+                                .card.mb-4.mb-md-0
+                                    .card-body
+                                        p.mb-4
+                                            span.text-primary.font-italic.me-1#addRulesBut Add Rule
+                                        #list-tab.list-group(role='tablist')
+                                            a.list-group-item.list-group-item-action.active(type='button' data-mdb-button-init='' data-mdb-ripple-init=''  data-bs-toggle='modal' data-bs-target='#modelNewRule') Add Rule
+    script(src="/javascript/rules.js") 

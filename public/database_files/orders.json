@@ -1,0 +1,62 @@
+[
+  {
+    "supplierOrderId": 1,
+    "supplierId": 4,
+    "numberIssues":0,
+    "supplierName": "Drumstic",
+    "customer":"Customer 1",
+    "orderNum": "SO118400",
+    "invoiceNum": "INV7013657",
+    "invoiceDate": "2024-04-09T00:00:00",
+    "subtotal": 2067.62,
+    "discount": 0,
+    "vat": 352.3,
+    "invoiceTotal": 2410.24,
+    "orderDelivered": false
+  },
+  {
+    "supplierOrderId": 2,
+    "supplierId": 3,
+    "numberIssues":2,
+    "supplierName": "Supplier 3",
+    "customer":"Customer 5",
+    "orderNum": "SO118411",
+    "invoiceNum": "INV7894462",
+    "invoiceDate": "2024-03-09T00:00:00",
+    "subtotal": 267.02,
+    "discount": 0,
+    "vat": 352.3,
+    "invoiceTotal": 40.24,
+    "orderDelivered": true
+  },
+  {
+    "supplierOrderId": 3,
+    "supplierId": 2,
+    "numberIssues":0,
+    "supplierName": "Supplier 2",
+    "customer":"Customer 1",
+    "orderNum": "SO192230",
+    "invoiceNum": "INV7016789",
+    "invoiceDate": "2024-02-09T00:00:00",
+    "subtotal": 2067.62,
+    "discount": 0,
+    "vat": 352.3,
+    "invoiceTotal": 240.24,
+    "orderDelivered": true
+  },
+  {
+    "supplierOrderId": 4,
+    "supplierId": 1,
+    "numberIssues":10,
+    "supplierName": "Supplier 1",
+    "customer":"Customer 8",
+    "orderNum": "SO591100",
+    "invoiceNum": "INV7018227",
+    "invoiceDate": "2024-01-09T00:00:00",
+    "subtotal": 67.62,
+    "discount": 0,
+    "vat": 352.3,
+    "invoiceTotal": 10.24,
+    "orderDelivered": true
+  }
+]

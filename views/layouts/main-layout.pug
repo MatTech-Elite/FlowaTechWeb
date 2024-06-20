@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/stylesheets/bootstrap.min.css')
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  script(src="/javascript/min/jquery-3.7.1.min.js")
+  script(src="/javascript/min/bootstrap.bundle.min.js")
+  script(src="/javascript/main.js")
+  title #{title}
+body
+    header
+        .px-3.py-2.text-bg-dark.border-bottom
+            .container
+                .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+                    a.d-flex.align-items-center.my-2.my-lg-0.me-lg-auto.text-white.text-decoration-none(href='/')
+                        svg.bi.me-2(width='40' height='32' role='img' aria-label='Bootstrap')
+                            use(xlink:href='#bootstrap')
+                    div.nav.col-12.my-2.justify-content-between.my-md-0.text-small
+                        ul.nav.col-12.col-lg-auto.my-2.my-md-0.text-small
+                            li
+                                form(action='/profile', method='GET')
+                                    button.nav-link.text-white(type="submit")#tab_profile
+                                        img.rounded-circle.img-fluid(src='/style/profile.png' alt='avatar' style='width: 40px;')
+                                        svg.bi.d-block.mx-auto.mb-1(width='24' height='1')
+                                            use(xlink:href='#speedometer2')
+                                        |                 Profile and Settings
+                        ul.nav.col-12.col-lg-auto.my-2.my-md-0.text-small
+                            li
+                                a.nav-link.text-white(href='/dashboard')#tab_dashboard
+                                    svg.bi.d-block.mx-auto.mb-1(width='24' height='34')
+                                        use(xlink:href='#speedometer2')
+                                    |                 Dashboard
+                            li
+                                a.nav-link.text-white(href='/customers')#tab_customers
+                                    svg.bi.d-block.mx-auto.mb-1(width='24' height='34')
+                                        use(xlink:href='#people-circle')
+                                    |                 Customers
+        .px-3.py-2.border-bottom.mb-0
+            .container.d-flex.flex-wrap.justify-content-center
+                form.col-12.col-lg-auto.mb-2.mb-lg-0.w-75.me-lg-auto(role='search')
+                    input.form-control(type='search' placeholder='Search...' aria-label='Search')#search_top
+                .text-end
+                    form(action='/logout', method='POST')
+                        button.btn.btn-primary(type='submit')#signOutBut Sign-out
+        //- .position-relative.d-none
+        //-     .alert.alert-success.alert-dismissible.fade.show(role='alert').position-absolute.top-0.start-50.translate-middle-x.w-50
+        //-         strong Alert Success
+        //-         button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+    block content
+
+    include main-footer

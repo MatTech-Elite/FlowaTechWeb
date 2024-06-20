@@ -1,0 +1,65 @@
+extends layouts/main-layout.pug 
+block content 
+    main
+        .modal-body
+            p
+                button.btn.btn-secondary(data-bs-toggle="tooltip" title="Dashboard")#back_orders &laquo; Back
+        .col
+            nav.bg-body-tertiary.rounded-3.p-3.mb-4(aria-label='breadcrumb')
+                ol.breadcrumb.mb-0
+                    li.breadcrumb-item
+                        a(href='/dashboard') Dashboard
+                    li.breadcrumb-item.active(aria-current='page') Order Details
+        #order_details
+            p.badge.text-bg-primary.text-wrap.text-black.bg-body-secondary.w-75.fs-4.sticky-top#order_num_elem Order Number: #{orderNum}
+            table.table.table-striped.table-hover.table-bordered
+                thead.table-Default
+                    tr#table_header_itemList
+                      th item
+                      th item Code
+                      th Qty
+                      th unit
+                      th price
+                      th Discount
+                      th vat
+                      th Amount
+                      th Review Complete
+                      th Issues
+                tbody.table-group-divider#item_table_element
+                    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                        tr
+                            th(scope='row')
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+                            td
+                                p.placeholder-glow
+                                    span.placeholder.col-12
+    script.
+      window.passedValue = "#{orderNum}";
+    script(src="/javascript/order_details.js")
+    //- script.
+    //-     loadAllItems(!{JSON.stringify(data)})

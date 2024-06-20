@@ -1,0 +1,23 @@
+[
+  {
+    "supplierIssueProofId": 13,
+    "supplierIssueId": 12,
+    "issueName": "Damaged",
+    "proofName": "Image",
+    "proofRequired": true
+  },
+  {
+    "supplierIssueProofId": 14,
+    "supplierIssueId": 11,
+    "issueName": "QTY",
+    "proofName": "Image",
+    "proofRequired": false
+  },
+  {
+    "supplierIssueProofId": 15,
+    "supplierIssueId": 11,
+    "issueName": "QTY",
+    "proofName": "Number Arrived",
+    "proofRequired": true
+  }
+]

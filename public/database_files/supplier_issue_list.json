@@ -1,0 +1,12 @@
+[
+  {
+    "supplierIssueId": 12,
+    "supplierId": 4,
+    "issueName": "Damaged"
+  },
+  {
+    "supplierIssueId": 11,
+    "supplierId": 4,
+    "issueName": "QTY"
+  }
+]

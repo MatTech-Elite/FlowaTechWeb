@@ -1,0 +1,28 @@
+extends layouts/main-layout.pug
+block content
+    main
+        .col
+            nav.bg-body-tertiary.rounded-3.p-3.mb-4(aria-label='breadcrumb')
+                ol.breadcrumb.mb-0
+                    li.breadcrumb-item
+                        a(href='/dashboard') Dashboard
+                    li.breadcrumb-item.active(aria-current='page') Customers
+        #orders_part
+            p.badge.text-bg-primary.text-wrap.text-black.bg-body-secondary.w-50#all_customers All Customers
+            ul.list-group.list-group-flush.h-50#order_list
+                li.list-group-item.list-group-item-secondary.d-flex.justify-content-between.align-items-center.active
+                    h5 Customer
+                    h5 Issues Count
+                li.list-group-item.list-group-item-secondary.d-flex.justify-content-between.align-items-center
+                    p.mb-1 Stamford hill Shop 2
+                    span.badge.text-bg-primary.rounded-pill 2
+                li.list-group-item.list-group-item-secondary.d-flex.justify-content-between.align-items-center
+                    p.mb-1 Stamford hill Shop 34
+                    span.badge.text-bg-primary.rounded-pill 5
+                li.list-group-item.list-group-item-secondary.d-flex.justify-content-between.align-items-center
+                    p.mb-1 Stamford hill Shop 1
+                    span.badge.text-bg-primary.rounded-pill 12
+    script.
+        text1 = "#{tabInfo}";
+        switchTabBoard(text1);
+                

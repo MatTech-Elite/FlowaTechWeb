@@ -1,0 +1,69 @@
+extends layouts/main-layout.pug
+block content
+    main
+        .col
+            nav.bg-body-tertiary.rounded-3.p-3.mb-4(aria-label='breadcrumb')
+                ol.breadcrumb.mb-0
+                    li.breadcrumb-item.active(aria-current='page') Dashboard
+        #orders_part
+            p.badge.text-bg-primary.text-wrap.text-black.bg-body-secondary.w-50#all_orders All Orders
+            table.table.table-striped.table-hover.table-bordered#order_list
+                thead.table-Default
+                    tr
+                      th Order Number
+                      th Customer
+                      th Review Complete
+                      th Issues Count
+                tbody.table-group-divider#orders_table_element
+                    tr
+                        th(scope='row')
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                    tr
+                        th(scope='row')
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                    tr
+                        th(scope='row')
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                        td
+                            p.placeholder-glow
+                                span.placeholder.col-12
+                //- each order in data
+                //-     li.list-group-item.list-group-item-secondary.d-flex.justify-content-between.align-items-center
+                //-         div
+                //-             h5.mb-1= order.orderNum
+                //-             small.text-body-secondary(type='date')= timeFunc(order.invoiceDate)
+                //-         p.mb-1= order.supplierName
+                //-         small.text-body-secondary=order.orderDelivered ? 'Yes' : 'No'
+                //-         span.badge.text-bg-primary.rounded-pill 12
+    script(src="javascript/dashboard.js")
+    //- script.
+    //-     let text1 = "#{tabInfo}";
+    //-     loadAllData(!{JSON.stringify(data)})
+    //-     switchTabBoard(text1);

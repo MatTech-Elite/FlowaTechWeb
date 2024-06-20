@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/stylesheets/bootstrap.min.css')
+  //link(rel="stylesheet", href="/stylesheets/output.css")
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  script(src="/javascript/min/jquery-3.7.1.min.js")
+  script(src="/javascript/min/bootstrap.bundle.min.js")
+  script(src="/javascript/main.js")
+  title #{title}
+body
+    header
+        .px-3.py-2.text-bg-dark.border-bottom
+            .container
+                .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+                    a.d-flex.align-items-center.my-2.my-lg-0.me-lg-auto.text-white.text-decoration-none(href='/')
+                        svg.bi.me-2(width='40' height='32' role='img' aria-label='Bootstrap')
+                            use(xlink:href='#bootstrap')
+        .p-5.text-center.bg-body-tertiary
+            h1.mb-3 Flowatech
+            h4.mb-3 Controle the Flow
+    main
+        form.w-25.border.border-dark.rounded(src='...' alt='...')#login_form
+            #formHelp.form-text.text-muted This Will be the error Element.
+            // Email input
+            .form-outline.mb-4(data-mdb-input-init='')
+                label.form-label(for='inputEmail') Email address
+                input#inputEmail.form-control(type='email')
+            // Password input
+            .form-outline.mb-4(data-mdb-input-init='')
+                label.form-label(for='passInput') Password
+                input#passInput.form-control(type='password')
+            // 2 column grid layout for inline styling
+            .row.mb-4
+                .col.d-flex.justify-content-center
+                    // Checkbox
+                    .form-check
+                        input#passCheck.form-check-input(type='checkbox').passShow
+                        label.form-check-label(for='passCheck') Show Password
+                .col
+                    // Simple link
+                    a(href='#') Forgot password?
+            // Submit button
+            button.btn.btn-primary.btn-block.mb-4.w-100(type='submit')#logIn Sign in
+    //- .flex.flex-col.pb-20.bg-white
+    //-     header.flex.justify-center.items-center.px-16.w-full.bg-slate-800(class='py-1.5 max-md:px-5 max-md:max-w-full')
+    //-         img.max-w-full(loading='lazy' src='https://cdn.builder.io/api/v1/image/assets/TEMP/48a46bcfeee39da3f89f44281e509b1cbae5907209e6004062b21e6b2b26bcd0?apiKey=4fc089ee36aa4ef5a6680408e6b28e46&' alt='Brand logo' class='aspect-[3.23] w-[209px]')
+    //-     section.flex.flex-col.items-center.self-center.px-16.py-10.mt-14.max-w-full.rounded-md.border-solid.border-slate-800(class='border-[3px] w-[530px] max-md:px-5 max-md:mt-10')
+    //-         h1.text-3xl.font-semibold.text-center.text-fuchsia-900  Welcome Back 
+    //-         button.justify-center.items-center.px-4.py-4.mt-14.max-w-full.text-sm.font-medium.leading-4.text-center.bg-white.rounded.border.border-solid.border-zinc-400.text-neutral-600(class='w-[342px] max-md:px-5 max-md:mt-10')
+    //-         | Sign up with Google
+    //-         .shrink-0.mt-6.max-w-full.h-px.border.border-solid.bg-zinc-300.border-zinc-300(class='w-[342px]')
+    //-         form.flex.flex-col.items-center.w-full.mt-7
+    //-             label.mt-7.text-sm.font-medium.tracking-normal.leading-4.text-gray-600(for='fullNameInput') Full name
+    //-             input#fullNameInput.shrink-0.mt-1.max-w-full.h-11.bg-white.rounded-md.border.border-solid.border-slate-400(type='text' class='w-[342px]')
+    //-             label.mt-4.text-sm.font-medium.tracking-normal.leading-4.text-gray-600(for='emailInput') Email
+    //-             input#emailInput.shrink-0.mt-1.max-w-full.h-11.bg-white.rounded-md.border.border-solid.border-slate-400(type='email' class='w-[342px]')
+    //-             label.mt-4.text-sm.font-medium.tracking-normal.leading-4.text-gray-600(for='passwordInput') Password
+    //-             .flex.flex-col.justify-center.items-end.px-3.py-3.mt-1.max-w-full.bg-white.rounded-md.border.border-solid.border-slate-400(class='w-[342px] max-md:pl-5')
+    //-                 input#passwordInput.w-full(type='password')
+    //-                 img(loading='lazy' src='https://cdn.builder.io/api/v1/image/assets/TEMP/f357c58e0e338ae4505e80aece8561d66f952d233c854a472f2fc23ed518e259?apiKey=4fc089ee36aa4ef5a6680408e6b28e46&' alt='Toggle password visibility' class='aspect-[1.54] w-[17px]')
+    //-             button.justify-center.items-center.px-4.py-4.mt-14.max-w-full.text-sm.font-bold.leading-4.text-center.text-teal-50.rounded.bg-zinc-600(type='submit' class='w-[293px] max-md:px-5 max-md:mt-10')
+    //-                 | Sign up
+    //-         p.justify-center.self-stretch.px-6.mt-14.text-xs.font-medium.leading-5.text-center.underline.text-slate-800(class='max-md:px-5 max-md:mt-10')
+    //-             span.text-slate-800 By continuing you accept our standard
+    //-             span.underline.text-slate-800 terms and conditions
+    //-             span.text-slate-800 and our
+    //-             span.underline.text-slate-800 privacy policy
+    //-             span.text-slate-800 .
+script(src="javascript/login.js")

@@ -1,0 +1,172 @@
+extends layouts/main-layout.pug 
+block content
+    main 
+        #modelChangePass.modal.fade(data-bs-backdrop="static" data-bs-keyboard="false" tabindex='-1' aria-labelledby='modelChangePass' aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        h5#exampleModalLabel.modal-title Change Password
+                        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')#topCloseBut
+                    .modal-body
+                        form
+                            #formHelp.form-text.text-muted Error
+                            .mb-3
+                                label.col-form-label(for='email') Email:
+                                input#email.form-control(type='email')
+                            .mb-3
+                                label.col-form-label(for='old-password') Old Password:
+                                input#old-password.form-control(type='password')
+                            .mb-3
+                                label.col-form-label(for='new-password') New Password:
+                                input#new-password.form-control(type='password')
+                            .mb-3
+                                label.col-form-label(for='new-password-confirm') Confirm New Password:
+                                input#new-password-confirm.form-control(type='password')
+                    .modal-footer
+                        button.btn.btn-secondary(type='button' data-bs-dismiss='modal')#closeBut Close
+                        button.btn.btn-primary(type='button')#saveNewPass Save
+
+        section(style='background-color: #eee;')
+            .container.py-5
+                .row
+                    .col
+                        nav.bg-body-tertiary.rounded-3.p-3.mb-4(aria-label='breadcrumb')
+                            ol.breadcrumb.mb-0
+                                //- li.breadcrumb-item
+                                //-     a(href='#') Home
+                                li.breadcrumb-item
+                                    a(href='/dashboard') Dashboard
+                                li.breadcrumb-item.active(aria-current='page') User Profile
+                .row.placeholder-glow#profileEvents
+                    .col-lg-4
+                        .card.mb-4
+                            .card-body.text-center
+                                img.rounded-circle.img-fluid(src='/style/profile.png' alt='avatar' style='width: 150px;')
+                                h5.my-3.supplierName
+                                    span.placeholder.col-5
+                                p.text-muted.mb-1.supplierEmail
+                                    span.placeholder.col-5
+                                p.text-muted.mb-4.supplierId 
+                                    span.placeholder.col-5
+                                .d-flex.justify-content-center.mb-2
+                                    button.btn.btn-outline-primary.ms-1(type='button' data-mdb-button-init='' data-mdb-ripple-init='')#profileEditBut Edit Profile
+                                    button.btn.btn-outline-primary.ms-1(type='button' data-mdb-button-init='' data-mdb-ripple-init=''  data-bs-toggle='modal' data-bs-target='#modelChangePass') Change Password
+                        //- .card.mb-4.mb-lg-0
+                        //-     .card-body.p-0
+                        //-         ul.list-group.list-group-flush.rounded-3
+                        //-             li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
+                        //-                 i.fas.fa-globe.fa-lg.text-warning
+                        //-                 p.mb-0 https://mdbootstrap.com
+                        //-             li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
+                        //-                 i.fab.fa-github.fa-lg.text-body
+                        //-                 p.mb-0 mdbootstrap
+                        //-             li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
+                        //-                 i.fab.fa-twitter.fa-lg(style='color: #55acee;')
+                        //-                 p.mb-0 @mdbootstrap
+                    .col-lg-8
+                        .card.mb-4
+                            .card-body
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Supplier Name
+                                    .col-sm-9
+                                        p.text-muted.mb-0.supplierName
+                                            span.placeholder.col-5
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Email
+                                    .col-sm-9
+                                        p.text-muted.mb-0.supplierEmail 
+                                            span.placeholder.col-5
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Phone
+                                    .col-sm-9
+                                        p.text-muted.mb-0 No Phone number
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 ID
+                                    .col-sm-9
+                                        p.text-muted.mb-0.supplierId 
+                                            span.placeholder.col-5
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Address
+                                    .col-sm-9
+                                        p.text-muted.mb-0 No Address
+                        .row
+                            .col-md-6
+                                .card.mb-4.mb-md-0
+                                    .card-body
+                                        p.mb-4
+                                            span.text-primary.font-italic.me-1(role="button" tabindex="0")#ordersBut Orders
+                                            |  Orders Status
+                                        p.mb-1(style='font-size: .77rem;') Total Orders
+                                        #supplierOrdersCount
+                                            span.placeholder.col-2
+                                        p.mt-4.mb-1(style='font-size: .77rem;') Orders with no Issues
+                                        .progress.rounded(style='height: 5px;')
+                                            .progress-bar(role='progressbar' style='width: 80%' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100')
+                                        p.mt-4.mb-1(style='font-size: .77rem;') Orders with Outstanding Issues
+                                        .progress.rounded(style='height: 5px;')
+                                            .progress-bar(role='progressbar' style='width: 72%' aria-valuenow='72' aria-valuemin='0' aria-valuemax='100')
+                                        p.mt-4.mb-1(style='font-size: .77rem;') Orders with Setteled Issues
+                                        .progress.rounded(style='height: 5px;')
+                                            .progress-bar(role='progressbar' style='width: 89%' aria-valuenow='89' aria-valuemin='0' aria-valuemax='100')
+                            .col-md-6
+                                .card.mb-4.mb-md-0
+                                    .card-body
+                                        p.mb-4
+                                            span.text-primary.font-italic.me-1(role="button" tabindex="0")#rulesBut Rules
+                                            |  Issue Rules Status
+                                        p.mb-1(style='font-size: .77rem;') Total Rules
+                                        #supplierRulesCount
+                                            span.placeholder.col-2
+                                        //- p.mt-4.mb-1(style='font-size: .77rem;') Rules with Proof
+                                        //- .progress.rounded(style='height: 5px;')
+                                        //-     .progress-bar(role='progressbar' style='width: 72%' aria-valuenow='72' aria-valuemin='0' aria-valuemax='100')
+                                        //- p.mt-4.mb-1(style='font-size: .77rem;') Rules With No Proof
+                                        //- .progress.rounded(style='height: 5px;')
+                                        //-     .progress-bar(role='progressbar' style='width: 89%' aria-valuenow='89' aria-valuemin='0' aria-valuemax='100')
+        //- section.w-100.px-4.py-5(style='background-color: #9de2ff; border-radius: .5rem .5rem 0 0; height: 70vh;')
+        //-     .row.d-flex.justify-content-center
+        //-         .col.col-md-9.col-lg-7.col-xl-6
+        //-             .card(style='border-radius: 15px;')
+        //-                 .card-body.p-4
+        //-                     .d-flex
+        //-                         .flex-shrink-0.h-50
+        //-                             img.img-fluid(src='style/profile.png' alt='Generic placeholder image' style='width: 180px; border-radius: 10px;')
+        //-                         .flex-grow-1.ms-5.placeholder-glow
+        //-                             h5.mb-1.text-muted Name:
+        //-                             h5.mb-2.pb-1.font-weight-bold#supplierName
+        //-                                 span.placeholder.col-5
+        //-                             h6.mb-1.text-muted ID:
+        //-                             h6.mb-2.pb-1.font-weight-bold#supplierId
+        //-                                 span.placeholder.col-4
+        //-                             p.mb-1.text-muted Email:
+        //-                             p.mb-4.pb-1.font-weight-bold#supplierEmail
+        //-                                 span.placeholder.col-5
+        //-                             //- h5.mb-1 Supplier Name
+        //-                             //- h6.mb-1 ID:
+        //-                             //- p.mb-2.pb-1 Email Address
+        //-                             .d-flex.justify-content-start.rounded-3.p-2.mb-2.bg-body-tertiary(style='height: 20vh;')
+        //-                                 div
+        //-                                     p.small.text-muted.mb-1 Rules
+        //-                                     p.mb-0#supplierRulesCount
+        //-                                         span.placeholder.col-8
+        //-                                 .px-3
+        //-                                     p.small.text-muted.mb-1 Orders
+        //-                                     p.mb-0#supplierOrdersCount
+        //-                                         span.placeholder.col-8
+        //-                                 div
+        //-                                     p.small.text-muted.mb-1 Issues
+        //-                                     p.mb-0#supplierIssuesCount
+        //-                                         span.placeholder.col-8
+        //-                             .d-flex.pt-1
+        //-                                 button.btn.btn-outline-primary.me-1.flex-grow-1(type='button' data-mdb-button-init='' data-mdb-ripple-init='' tabindex="-1" class="disabled placeholder")#editRules Edit rules
+        //-                                 button.btn.btn-primary.flex-grow-1(type='button' data-mdb-button-init='' data-mdb-ripple-init='' tabindex="-1" class="disabled placeholder")#editProfile Edit Profile
+    script(src="/javascript/profile.js")

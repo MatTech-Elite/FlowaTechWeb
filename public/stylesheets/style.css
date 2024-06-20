@@ -1,0 +1,100 @@
+header, main {
+    margin: 0;
+    padding: 0;
+}
+
+#back_orders {
+    margin-left: 2%;
+}
+
+#orders_part, #order_details {
+    text-align: center;
+    margin: 10px;
+}
+
+#all_orders, #all_customers {
+    text-align: center;
+    font-size: 25px;
+    margin: 10px;
+}
+
+#order_list {
+    margin: 20px 0 10px 10%;
+    max-width: 80%;
+}
+
+.order_element {
+    cursor: pointer;
+}
+
+#order_time {
+    font-size: 12px;
+    color: gray;
+}
+
+/* #copy_order_num_ {
+    float: left;
+} */
+
+[id^="copy_order_num_"] {
+    position: absolute;
+    right: 10px;
+}
+#order_num_list {
+    position: relative;
+}
+
+
+
+
+/*order details PAGE*/
+.list_item {
+    text-align: left;
+    max-width: 280px;
+}
+
+#table_header_itemList {
+    position: -webkit-sticky !important; /* For Safari */
+    position: sticky !important;
+    top: 50px !important;
+}
+
+
+
+/*LOGIN PAGE*/
+#login_form {
+    margin: auto;
+    padding: 20px;
+    margin-top:5%;
+}
+
+#form-header {
+    padding: 5px;
+    text-align: center;
+    background: #b1b1b1;
+    color: rgb(17, 17, 17);
+    font-size: 20px;
+    border-radius: 10px;
+ }
+
+ #formHelp, #formHelpEdit {
+    display: none;
+    font-weight: bold;
+    background-color: rgb(253, 91, 91);
+    border: brown 2px solid;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+ }
+
+ #loading_img {
+    position: fixed !important;
+    margin-left: 50%;
+    margin-top: 25% ;
+    left: -100px;
+    top: -100px ;
+    width: 200px;
+    height: 200px;
+    /* display: none; */
+ }
